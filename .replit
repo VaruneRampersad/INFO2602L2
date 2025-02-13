@@ -1,11 +1,12 @@
+
 modules = ["python-3.10", "nix"]
 
 hidden = [".pythonlibs"]
-run = "flask run -host 0.0.0.0 -p 8080 --reload"
+run = "flask run --host=0.0.0.0 --port=8080 --reload"
 
 [nix]
 channel = "stable-24_05"
 
 [deployment]
-run = ["sh", "-c", "flask run -host 0.0.0.0 -p 8080 --reload"]
+run = ["sh", "-c", "flask run --host=0.0.0.0 --port=8080 --reload"]
 deploymentTarget = "cloudrun"
